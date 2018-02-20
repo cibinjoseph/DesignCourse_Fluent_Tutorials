@@ -1,0 +1,3445 @@
+﻿# encoding: utf-8
+# Release 16.0
+SetScriptVersion(Version="16.0.361")
+template1 = GetTemplate(TemplateName="Fluid Flow")
+system1 = template1.CreateSystem()
+system1.DisplayText = "2dAirfoil"
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+geometry1.Exit()
+geometry1.Edit()
+geometry1.Exit()
+geometryProperties1 = geometry1.GetGeometryProperties()
+geometryProperties1.GeometryImportAnalysisType = "AnalysisType_2D"
+geometry1.Edit()
+geometry1.Exit()
+Save(Overwrite=True)
+meshComponent1 = system1.GetComponent(Name="Mesh")
+meshComponent1.Refresh()
+mesh1 = system1.GetContainer(ComponentName="Mesh")
+mesh1.Edit()
+mesh1.Exit()
+geometry1.Edit()
+geometry1.Exit()
+meshComponent1.Refresh()
+mesh1.Edit()
+mesh1.Exit()
+geometry1.Edit()
+geometry1.Exit()
+meshComponent1.Refresh()
+mesh1.Edit()
+mesh1.Exit()
+Save(Overwrite=True)
+setupComponent1 = system1.GetComponent(Name="Setup")
+setupComponent1.Refresh()
+setup1 = system1.GetContainer(ComponentName="Setup")
+fluentLauncherSettings1 = setup1.GetFluentLauncherSettings()
+fluentLauncherSettings1.SetEntityProperties(Properties=Set(Precision="Double", EnvPath={}, RunParallel=True, NumberOfProcessors=4))
+setup1.Edit()
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Models"))')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Models*Frame1*Table1*Frame1*List1(Models)\" '( 2))(cx-gui-do cx-activate-item \"Models*Frame1*Table1*Frame1*List1(Models)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Models*Frame1*Table1*PushButton2(Edit)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-toggle-button "Viscous Model*Frame1*Table1*Frame1(Model)*ToggleBox1(Model)*Inviscid" #f)(cx-gui-do cx-activate-item "Viscous Model*Frame1*Table1*Frame1(Model)*ToggleBox1(Model)*Inviscid")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Viscous Model*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Models*Frame1*Table1*Frame1*List1(Models)\" '( 2))(cx-gui-do cx-activate-item \"Models*Frame1*Table1*Frame1*List1(Models)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Models*Frame1*Table1*PushButton2(Edit)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-position \"Viscous Model\" '(x 294 y 273))(cx-gui-do cx-set-position \"Viscous Model\" '(x 294 y 274))(cx-gui-do cx-set-position \"Viscous Model\" '(x 295 y 276))(cx-gui-do cx-set-position \"Viscous Model\" '(x 296 y 278))(cx-gui-do cx-set-position \"Viscous Model\" '(x 296 y 279))(cx-gui-do cx-set-position \"Viscous Model\" '(x 297 y 280))(cx-gui-do cx-set-position \"Viscous Model\" '(x 298 y 282))(cx-gui-do cx-set-position \"Viscous Model\" '(x 299 y 284))(cx-gui-do cx-set-position \"Viscous Model\" '(x 299 y 286))(cx-gui-do cx-set-position \"Viscous Model\" '(x 300 y 287))(cx-gui-do cx-set-position \"Viscous Model\" '(x 300 y 288))(cx-gui-do cx-set-position \"Viscous Model\" '(x 300 y 289))(cx-gui-do cx-set-position \"Viscous Model\" '(x 301 y 289))(cx-gui-do cx-set-position \"Viscous Model\" '(x 301 y 290))(cx-gui-do cx-set-position \"Viscous Model\" '(x 302 y 292))(cx-gui-do cx-set-position \"Viscous Model\" '(x 303 y 294))(cx-gui-do cx-set-position \"Viscous Model\" '(x 305 y 297))(cx-gui-do cx-set-position \"Viscous Model\" '(x 305 y 298))(cx-gui-do cx-set-position \"Viscous Model\" '(x 306 y 299))(cx-gui-do cx-set-position \"Viscous Model\" '(x 306 y 300))(cx-gui-do cx-set-position \"Viscous Model\" '(x 306 y 301))(cx-gui-do cx-set-position \"Viscous Model\" '(x 308 y 303))(cx-gui-do cx-set-position \"Viscous Model\" '(x 309 y 304))(cx-gui-do cx-set-position \"Viscous Model\" '(x 309 y 305))(cx-gui-do cx-set-position \"Viscous Model\" '(x 310 y 306))(cx-gui-do cx-set-position \"Viscous Model\" '(x 311 y 308))(cx-gui-do cx-set-position \"Viscous Model\" '(x 312 y 309))(cx-gui-do cx-set-position \"Viscous Model\" '(x 313 y 310))(cx-gui-do cx-set-position \"Viscous Model\" '(x 314 y 312))(cx-gui-do cx-set-position \"Viscous Model\" '(x 316 y 313))(cx-gui-do cx-set-position \"Viscous Model\" '(x 316 y 315))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 317))(cx-gui-do cx-set-position \"Viscous Model\" '(x 319 y 318))(cx-gui-do cx-set-position \"Viscous Model\" '(x 319 y 320))(cx-gui-do cx-set-position \"Viscous Model\" '(x 321 y 321))(cx-gui-do cx-set-position \"Viscous Model\" '(x 321 y 322))(cx-gui-do cx-set-position \"Viscous Model\" '(x 323 y 324))(cx-gui-do cx-set-position \"Viscous Model\" '(x 323 y 325))(cx-gui-do cx-set-position \"Viscous Model\" '(x 324 y 326))(cx-gui-do cx-set-position \"Viscous Model\" '(x 324 y 327))(cx-gui-do cx-set-position \"Viscous Model\" '(x 325 y 327))(cx-gui-do cx-set-position \"Viscous Model\" '(x 325 y 328))(cx-gui-do cx-set-position \"Viscous Model\" '(x 326 y 329))(cx-gui-do cx-set-position \"Viscous Model\" '(x 327 y 330))(cx-gui-do cx-set-position \"Viscous Model\" '(x 328 y 331))(cx-gui-do cx-set-position \"Viscous Model\" '(x 328 y 332))(cx-gui-do cx-set-position \"Viscous Model\" '(x 328 y 333))(cx-gui-do cx-set-position \"Viscous Model\" '(x 329 y 336))(cx-gui-do cx-set-position \"Viscous Model\" '(x 329 y 342))(cx-gui-do cx-set-position \"Viscous Model\" '(x 331 y 346))(cx-gui-do cx-set-position \"Viscous Model\" '(x 333 y 349))(cx-gui-do cx-set-position \"Viscous Model\" '(x 335 y 354))(cx-gui-do cx-set-position \"Viscous Model\" '(x 336 y 358))(cx-gui-do cx-set-position \"Viscous Model\" '(x 336 y 360))(cx-gui-do cx-set-position \"Viscous Model\" '(x 336 y 363))(cx-gui-do cx-set-position \"Viscous Model\" '(x 337 y 363))(cx-gui-do cx-set-position \"Viscous Model\" '(x 337 y 364))(cx-gui-do cx-set-position \"Viscous Model\" '(x 338 y 367))(cx-gui-do cx-set-position \"Viscous Model\" '(x 338 y 371))(cx-gui-do cx-set-position \"Viscous Model\" '(x 338 y 374))(cx-gui-do cx-set-position \"Viscous Model\" '(x 339 y 379))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 386))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 395))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 404))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 414))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 420))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 427))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 431))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 433))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 435))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 436))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 437))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 438))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 439))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 440))(cx-gui-do cx-set-position \"Viscous Model\" '(x 340 y 441))(cx-gui-do cx-set-position \"Viscous Model\" '(x 339 y 441))(cx-gui-do cx-set-position \"Viscous Model\" '(x 338 y 441))(cx-gui-do cx-set-position \"Viscous Model\" '(x 337 y 441))(cx-gui-do cx-set-position \"Viscous Model\" '(x 336 y 440))(cx-gui-do cx-set-position \"Viscous Model\" '(x 335 y 439))(cx-gui-do cx-set-position \"Viscous Model\" '(x 335 y 437))(cx-gui-do cx-set-position \"Viscous Model\" '(x 334 y 435))(cx-gui-do cx-set-position \"Viscous Model\" '(x 333 y 433))(cx-gui-do cx-set-position \"Viscous Model\" '(x 331 y 430))(cx-gui-do cx-set-position \"Viscous Model\" '(x 327 y 425))(cx-gui-do cx-set-position \"Viscous Model\" '(x 327 y 422))(cx-gui-do cx-set-position \"Viscous Model\" '(x 326 y 420))(cx-gui-do cx-set-position \"Viscous Model\" '(x 325 y 416))(cx-gui-do cx-set-position \"Viscous Model\" '(x 324 y 412))(cx-gui-do cx-set-position \"Viscous Model\" '(x 323 y 406))(cx-gui-do cx-set-position \"Viscous Model\" '(x 322 y 400))(cx-gui-do cx-set-position \"Viscous Model\" '(x 320 y 395))(cx-gui-do cx-set-position \"Viscous Model\" '(x 319 y 388))(cx-gui-do cx-set-position \"Viscous Model\" '(x 319 y 383))(cx-gui-do cx-set-position \"Viscous Model\" '(x 319 y 379))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 375))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 371))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 368))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 365))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 361))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 358))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 354))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 351))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 348))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 345))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 344))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 342))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 341))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 339))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 338))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 337))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 334))(cx-gui-do cx-set-position \"Viscous Model\" '(x 318 y 333))(cx-gui-do cx-activate-item \"Viscous Model*PanelButtons*PushButton1(OK)\")")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Models*Frame1*Table1*Frame1*List1(Models)\" '( 2))(cx-gui-do cx-activate-item \"Models*Frame1*Table1*Frame1*List1(Models)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Cell Zone Conditions"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Materials"))')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Materials*Frame1*Table1*Frame1*List1(Materials)\" '( 1))(cx-gui-do cx-activate-item \"Materials*Frame1*Table1*Frame1*List1(Materials)\")")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Materials*Frame1*Table1*Frame1*List1(Materials)\" '( 1))(cx-gui-do cx-activate-item \"Materials*Frame1*Table1*Frame1*List1(Materials)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Materials*Frame1*Table1*ButtonBox2*PushButton1(Create/Edit)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Create/Edit Materials*PanelButtons*PushButton1(Close)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Materials*Frame1*Table1*Frame1*List1(Materials)\" '( 0))(cx-gui-do cx-activate-item \"Materials*Frame1*Table1*Frame1*List1(Materials)\")")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Materials*Frame1*Table1*Frame1*List1(Materials)\" '( 1))(cx-gui-do cx-activate-item \"Materials*Frame1*Table1*Frame1*List1(Materials)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Materials*Frame1*Table1*ButtonBox2*PushButton1(Create/Edit)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Create/Edit Materials*Frame1*Table1*Frame1*ButtonBox3*PushButton1(Fluent Database)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Database Materials*PanelButtons*PushButton1(Close)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Create/Edit Materials*PanelButtons*PushButton1(Close)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Cell Zone Conditions"))')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Boundary Conditions*Frame1*Table1*Frame2*Table2*Frame4*Table4*ButtonBox1*PushButton1(Edit)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "fluid-3-1*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Boundary Conditions"))')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Boundary Conditions*Frame1*Table1*Frame1*List1(Zone)\" '( 0))(cx-gui-do cx-activate-item \"Boundary Conditions*Frame1*Table1*Frame1*List1(Zone)\")")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Boundary Conditions*Frame1*Table1*Frame2*Table2*DropDownList2(Type)\" '( 13))(cx-gui-do cx-activate-item \"Boundary Conditions*Frame1*Table1*Frame2*Table2*DropDownList2(Type)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "wall-8-1*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Boundary Conditions*Frame1*Table1*Frame1*List1(Zone)\" '( 1))(cx-gui-do cx-activate-item \"Boundary Conditions*Frame1*Table1*Frame1*List1(Zone)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Boundary Conditions*Frame1*Table1*Frame2*Table2*Frame4*Table4*ButtonBox1*PushButton1(Edit)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 296 y 254))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 296 y 252))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 297 y 250))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 299 y 246))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 301 y 241))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 302 y 238))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 303 y 232))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 305 y 226))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 306 y 221))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 308 y 215))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 310 y 209))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 312 y 203))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 315 y 198))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 318 y 192))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 321 y 186))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 323 y 181))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 324 y 177))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 326 y 172))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 328 y 168))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 330 y 164))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 331 y 160))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 333 y 157))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 334 y 153))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 335 y 151))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 335 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 336 y 149))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 336 y 148))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 337 y 146))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 338 y 144))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 338 y 143))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 339 y 142))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 340 y 140))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 341 y 139))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 344 y 136))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 345 y 135))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 348 y 132))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 350 y 129))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 352 y 128))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 356 y 126))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 359 y 123))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 360 y 123))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 362 y 121))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 363 y 118))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 365 y 117))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 365 y 116))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 366 y 116))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 368 y 115))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 369 y 114))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 370 y 114))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 371 y 113))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 373 y 112))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 375 y 111))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 377 y 110))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 380 y 109))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 382 y 108))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 383 y 107))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 384 y 107))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 386 y 106))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 388 y 105))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 389 y 105))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 392 y 105))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 395 y 105))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 397 y 105))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 399 y 105))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 402 y 105))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 405 y 105))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 407 y 105))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 410 y 105))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 413 y 105))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 417 y 105))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 422 y 109))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 428 y 112))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 431 y 114))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 437 y 117))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 443 y 121))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 450 y 125))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 456 y 128))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 462 y 131))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 467 y 133))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 470 y 135))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 472 y 137))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 474 y 139))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 475 y 140))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 477 y 142))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 478 y 142))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 478 y 143))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 478 y 144))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 478 y 145))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 478 y 146))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 478 y 147))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 478 y 149))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 478 y 151))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 478 y 154))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 478 y 159))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 478 y 162))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 478 y 166))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 478 y 171))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 478 y 178))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 477 y 183))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 475 y 189))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 473 y 194))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 471 y 198))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 469 y 204))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 468 y 210))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 465 y 216))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 462 y 223))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 458 y 231))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 455 y 240))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 452 y 247))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 450 y 253))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 447 y 257))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 446 y 262))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 444 y 265))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 443 y 266))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 441 y 269))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 440 y 270))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 439 y 271))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 438 y 271))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 437 y 271))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 435 y 271))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 431 y 268))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 430 y 265))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 427 y 256))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 423 y 247))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 418 y 236))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 415 y 225))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 412 y 214))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 410 y 204))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 408 y 196))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 407 y 188))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 406 y 181))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 405 y 175))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 405 y 170))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 405 y 164))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 405 y 160))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 405 y 157))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 405 y 154))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 405 y 153))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 405 y 152))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 405 y 151))(cx-gui-do cx-set-real-entry-list \"velocity-inlet-7-1*Frame4*Frame1(Momentum)*Frame1*Table1*Frame12*Table12*RealEntry2(Velocity Magnitude)\" '( 1))")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"velocity-inlet-7-1*Frame4*Frame1(Momentum)*Frame1*Table1*DropDownList6(Velocity Specification Method)\" '( 0))(cx-gui-do cx-activate-item \"velocity-inlet-7-1*Frame4*Frame1(Momentum)*Frame1*Table1*DropDownList6(Velocity Specification Method)\")")
+setup1.SendCommand(Command="(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 395 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 393 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 388 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 383 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 376 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 369 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 361 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 354 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 348 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 341 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 334 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 326 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 318 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 309 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 299 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 290 y 150))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 282 y 151))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 273 y 151))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 265 y 151))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 256 y 152))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 249 y 153))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 245 y 154))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 240 y 154))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 236 y 154))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 231 y 155))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 227 y 156))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 224 y 157))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 221 y 158))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 218 y 159))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 215 y 159))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 212 y 160))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 209 y 160))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 206 y 160))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 203 y 161))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 199 y 162))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 193 y 162))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 187 y 162))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 180 y 162))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 173 y 162))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 165 y 162))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 157 y 162))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 149 y 162))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 142 y 162))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 137 y 162))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 133 y 162))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 131 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 130 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 129 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 128 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 126 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 123 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 122 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 121 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 119 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 118 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 117 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 118 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 120 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 121 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 123 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 124 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 125 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 126 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 127 y 163))(cx-gui-do cx-set-position \"velocity-inlet-7-1\" '(x 128 y 163))")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"velocity-inlet-7-1*Frame4*Frame1(Momentum)*Frame1*Table1*DropDownList6(Velocity Specification Method)\" '( 0))(cx-gui-do cx-activate-item \"velocity-inlet-7-1*Frame4*Frame1(Momentum)*Frame1*Table1*DropDownList6(Velocity Specification Method)\")")
+setup1.SendCommand(Command="(cx-gui-do cx-set-real-entry-list \"velocity-inlet-7-1*Frame4*Frame1(Momentum)*Frame1*Table1*Frame18*Table18*RealEntry2(X-Component of Flow Direction)\" '( 0.996))(cx-gui-do cx-set-real-entry-list \"velocity-inlet-7-1*Frame4*Frame1(Momentum)*Frame1*Table1*Frame18*Table18*RealEntry2(X-Component of Flow Direction)\" '( 0.9962))(cx-gui-do cx-set-real-entry-list \"velocity-inlet-7-1*Frame4*Frame1(Momentum)*Frame1*Table1*Frame19*Table19*RealEntry2(Y-Component of Flow Direction)\" '( 0.0872))(cx-gui-do cx-activate-item \"velocity-inlet-7-1*PanelButtons*PushButton1(OK)\")")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Boundary Conditions*Frame1*Table1*Frame1*List1(Zone)\" '( 3))(cx-gui-do cx-activate-item \"Boundary Conditions*Frame1*Table1*Frame1*List1(Zone)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Boundary Conditions*Frame1*Table1*Frame2*Table2*Frame4*Table4*ButtonBox1*PushButton1(Edit)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "pressure-outlet-6-1*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Boundary Conditions*Frame1*Table1*Frame2*Table2*Frame4*Table4*Frame2*Table2*PushButton2(Operating Conditions)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Operating Conditions*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Dynamic Mesh"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Reference Values"))')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Reference Values*DropDownList1(Compute from)\" '( 4))(cx-gui-do cx-activate-item \"Reference Values*DropDownList1(Compute from)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Solution|Solution Methods"))')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Solution Methods*Frame1*Table1*Frame3(Spatial Discretization)*Table3(Spatial Discretization)*DropDownList3(Momentum)\" '( 1))(cx-gui-do cx-activate-item \"Solution Methods*Frame1*Table1*Frame3(Spatial Discretization)*Table3(Spatial Discretization)*DropDownList3(Momentum)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Solution|Solution Controls"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Solution|Monitors"))')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Monitors*Frame1*Table1*Frame4*Table4*PushButton1(Create)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Surface Monitor*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Monitors*Frame1*Table1*Frame2*Table2*PushButton2(Edit)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Residual Monitors*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Monitors*Frame1*Table1*Frame4*Table4*PushButton1(Create)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Surface Monitor*Frame1*Table1*Frame2*Table2*DropDownList1(Report Type)\" '( 0))(cx-gui-do cx-activate-item \"Surface Monitor*Frame1*Table1*Frame2*Table2*DropDownList1(Report Type)\")")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Surface Monitor*Frame1*Table1*Frame2*Table2*DropDownList3(Field Variable)\" '( 0))(cx-gui-do cx-activate-item \"Surface Monitor*Frame1*Table1*Frame2*Table2*DropDownList3(Field Variable)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Surface Monitor*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Results|Plots"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Solution|Monitors"))')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Monitors*Frame1*Table1*Frame6*Table6*PushButton1(Create)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Volume Monitor*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Monitors*Frame1*Table1*Frame4*Table4*PushButton1(Create)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Surface Monitor*Frame1*Table1*Frame2*Table2*DropDownList1(Report Type)\" '( 0))(cx-gui-do cx-activate-item \"Surface Monitor*Frame1*Table1*Frame2*Table2*DropDownList1(Report Type)\")")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Surface Monitor*Frame1*Table1*Frame2*Table2*DropDownList3(Field Variable)\" '( 7))(cx-gui-do cx-activate-item \"Surface Monitor*Frame1*Table1*Frame2*Table2*DropDownList3(Field Variable)\")")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Surface Monitor*Frame1*Table1*Frame2*Table2*DropDownList3(Field Variable)\" '( 0))(cx-gui-do cx-activate-item \"Surface Monitor*Frame1*Table1*Frame2*Table2*DropDownList3(Field Variable)\")")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Surface Monitor*Frame1*Table1*Frame2*Table2*DropDownList4\" '( 1))(cx-gui-do cx-activate-item \"Surface Monitor*Frame1*Table1*Frame2*Table2*DropDownList4\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Surface Monitor*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Monitors*Frame1*Table1*Frame2*Table2*PushButton1(Create)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Monitors*Frame1*Table1*Frame2*Table2*PushButton1(Create)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*PopupMenuCreateMonitor*Lift...")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Force Moment Monitor*Frame1*Table1*Frame2*Table2*Frame1*List1(Wall Zones)\" '( 0))(cx-gui-do cx-activate-item \"Force Moment Monitor*Frame1*Table1*Frame2*Table2*Frame1*List1(Wall Zones)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-set-toggle-button "Force Moment Monitor*Frame1*Table1*Frame1*Table1*Frame1(Options)*Table1(Options)*CheckButton1(Print to Console)" #f)(cx-gui-do cx-activate-item "Force Moment Monitor*Frame1*Table1*Frame1*Table1*Frame1(Options)*Table1(Options)*CheckButton1(Print to Console)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-toggle-button "Force Moment Monitor*Frame1*Table1*Frame1*Table1*Frame1(Options)*Table1(Options)*CheckButton2(Plot)" #f)(cx-gui-do cx-activate-item "Force Moment Monitor*Frame1*Table1*Frame1*Table1*Frame1(Options)*Table1(Options)*CheckButton2(Plot)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Force Moment Monitor*Frame1*Table1*Frame1*Table1*Frame1(Options)*Table1(Options)*Frame3*Table3*Frame3*Table3*ButtonBox2*PushButton1(Curves)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Curves*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Force Moment Monitor*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Monitors*Frame1*Table1*Frame1*List1(Residuals, Statistic and Force Monitors)\" '( 2))(cx-gui-do cx-activate-item \"Monitors*Frame1*Table1*Frame1*List1(Residuals, Statistic and Force Monitors)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Monitors*Frame1*Table1*Frame2*Table2*PushButton2(Edit)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-text-entry "Force Moment Monitor*Frame1*Table1*Frame1*Table1*TextEntry3(Name)" "lift-coefficient")(cx-gui-do cx-activate-item "Force Moment Monitor*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Monitors*Frame1*Table1*Frame1*List1(Residuals, Statistic and Force Monitors)\" '( 0))(cx-gui-do cx-activate-item \"Monitors*Frame1*Table1*Frame1*List1(Residuals, Statistic and Force Monitors)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Monitors*Frame1*Table1*Frame2*Table2*PushButton2(Edit)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-real-entry-list \"Residual Monitors*Frame1*Table1*Frame2*Table2*Frame1(Equations)*Table1(Equations)*RealEntry11\" '( 1e-006))(cx-gui-do cx-set-real-entry-list \"Residual Monitors*Frame1*Table1*Frame2*Table2*Frame1(Equations)*Table1(Equations)*RealEntry17\" '( 1e-006))(cx-gui-do cx-set-real-entry-list \"Residual Monitors*Frame1*Table1*Frame2*Table2*Frame1(Equations)*Table1(Equations)*RealEntry23\" '( 1e-006))(cx-gui-do cx-activate-item \"Residual Monitors*PanelButtons*PushButton1(OK)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Solution|Solution Initialization"))')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Solution Initialization*Frame1*Table1*ButtonBox10*PushButton2(Initialize)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Solution|Calculation Activities"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Solution|Run Calculation"))(cx-gui-do cx-set-integer-entry "Run Calculation*Frame1*Table1*IntegerEntry9(Number of Iterations)" 100)(cx-gui-do cx-activate-item "Run Calculation*Frame1*Table1*IntegerEntry9(Number of Iterations)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Cell Zone Conditions"))(cx-gui-do cx-set-integer-entry "Run Calculation*Frame1*Table1*IntegerEntry9(Number of Iterations)" 10)(cx-gui-do cx-activate-item "Run Calculation*Frame1*Table1*IntegerEntry9(Number of Iterations)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Boundary Conditions"))')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Boundary Conditions*Frame1*Table1*Frame1*List1(Zone)\" '( 1))(cx-gui-do cx-activate-item \"Boundary Conditions*Frame1*Table1*Frame1*List1(Zone)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Boundary Conditions*Frame1*Table1*Frame2*Table2*Frame4*Table4*ButtonBox1*PushButton1(Edit)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-real-entry-list \"velocity-inlet-7-1*Frame4*Frame1(Momentum)*Frame1*Table1*Frame19*Table19*RealEntry2(Y-Component of Flow Direction)\" '( 0.0872))(cx-gui-do cx-activate-item \"velocity-inlet-7-1*PanelButtons*PushButton2(Cancel)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Solution|Run Calculation"))')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Run Calculation*Frame1*Table1*PushButton21(Calculate)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Information*OK")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-integer-entry "Run Calculation*Frame1*Table1*IntegerEntry9(Number of Iterations)" 100)(cx-gui-do cx-activate-item "Run Calculation*Frame1*Table1*IntegerEntry9(Number of Iterations)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Run Calculation*Frame1*Table1*PushButton21(Calculate)")(cx-gui-do cx-activate-item "Settings have changed!*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Information*OK")(cx-gui-do cx-set-integer-entry "Run Calculation*Frame1*Table1*IntegerEntry9(Number of Iterations)" 200)(cx-gui-do cx-activate-item "Run Calculation*Frame1*Table1*IntegerEntry9(Number of Iterations)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Run Calculation*Frame1*Table1*PushButton21(Calculate)")(cx-gui-do cx-activate-item "Settings have changed!*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"GraphicsArea*GraphicsView1*DropDownList1\" '( 1))(cx-gui-do cx-activate-item \"GraphicsArea*GraphicsView1*DropDownList1\")(cx-gui-do cx-set-list-selections \"GraphicsArea*GraphicsView1*DropDownList1\" '( 0))(cx-gui-do cx-activate-item \"GraphicsArea*GraphicsView1*DropDownList1\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Information*OK")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"GraphicsArea*GraphicsView1*DropDownList1\" '( 1))(cx-gui-do cx-activate-item \"GraphicsArea*GraphicsView1*DropDownList1\")")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Results|Graphics"))(cx-gui-do cx-set-integer-entry "Run Calculation*Frame1*Table1*IntegerEntry9(Number of Iterations)" 300)(cx-gui-do cx-activate-item "Run Calculation*Frame1*Table1*IntegerEntry9(Number of Iterations)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Graphics and Animations*Frame1*Table1*Frame1*List1(Graphics)\" '( 1))(cx-gui-do cx-activate-item \"Graphics and Animations*Frame1*Table1*Frame1*List1(Graphics)\")")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Graphics and Animations*Frame1*Table1*Frame1*List1(Graphics)\" '( 1))(cx-gui-do cx-activate-item \"Graphics and Animations*Frame1*Table1*Frame1*List1(Graphics)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Graphics and Animations*Frame1*Table1*PushButton2(Set Up)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Contours*Frame3*Table3*DropDownList1(Contours of)\" '( 2))(cx-gui-do cx-activate-item \"Contours*Frame3*Table3*DropDownList1(Contours of)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-set-toggle-button "Contours*Frame2*Frame1(Options)*ToggleBox1(Options)*CheckButton1(Filled)" #f)(cx-gui-do cx-activate-item "Contours*Frame2*Frame1(Options)*ToggleBox1(Options)*CheckButton1(Filled)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Contours*Frame4*Frame3*List3(Surfaces)\" '( 2))(cx-gui-do cx-activate-item \"Contours*Frame4*Frame3*List3(Surfaces)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton3(Compute)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-position \"Contours\" '(x 285 y 193))(cx-gui-do cx-set-position \"Contours\" '(x 283 y 193))(cx-gui-do cx-set-position \"Contours\" '(x 280 y 193))(cx-gui-do cx-set-position \"Contours\" '(x 275 y 192))(cx-gui-do cx-set-position \"Contours\" '(x 270 y 191))(cx-gui-do cx-set-position \"Contours\" '(x 263 y 189))(cx-gui-do cx-set-position \"Contours\" '(x 256 y 188))(cx-gui-do cx-set-position \"Contours\" '(x 251 y 188))(cx-gui-do cx-set-position \"Contours\" '(x 247 y 187))(cx-gui-do cx-set-position \"Contours\" '(x 243 y 186))(cx-gui-do cx-set-position \"Contours\" '(x 238 y 185))(cx-gui-do cx-set-position \"Contours\" '(x 235 y 184))(cx-gui-do cx-set-position \"Contours\" '(x 234 y 184))(cx-gui-do cx-set-position \"Contours\" '(x 232 y 184))(cx-gui-do cx-set-position \"Contours\" '(x 230 y 183))(cx-gui-do cx-set-position \"Contours\" '(x 229 y 182))(cx-gui-do cx-set-position \"Contours\" '(x 228 y 182))(cx-gui-do cx-set-position \"Contours\" '(x 225 y 181))(cx-gui-do cx-set-position \"Contours\" '(x 224 y 181))(cx-gui-do cx-set-position \"Contours\" '(x 222 y 181))(cx-gui-do cx-set-position \"Contours\" '(x 221 y 181))(cx-gui-do cx-set-position \"Contours\" '(x 220 y 180))(cx-gui-do cx-set-position \"Contours\" '(x 219 y 180))(cx-gui-do cx-set-position \"Contours\" '(x 218 y 180))(cx-gui-do cx-set-position \"Contours\" '(x 217 y 180))(cx-gui-do cx-set-position \"Contours\" '(x 216 y 180))(cx-gui-do cx-set-position \"Contours\" '(x 215 y 179))(cx-gui-do cx-set-position \"Contours\" '(x 214 y 179))(cx-gui-do cx-set-position \"Contours\" '(x 213 y 178))(cx-gui-do cx-set-position \"Contours\" '(x 212 y 178))(cx-gui-do cx-set-position \"Contours\" '(x 211 y 178))(cx-gui-do cx-set-position \"Contours\" '(x 210 y 177))(cx-gui-do cx-set-position \"Contours\" '(x 209 y 176))(cx-gui-do cx-set-position \"Contours\" '(x 208 y 176))(cx-gui-do cx-set-position \"Contours\" '(x 206 y 175))(cx-gui-do cx-set-position \"Contours\" '(x 205 y 175))(cx-gui-do cx-set-position \"Contours\" '(x 204 y 173))(cx-gui-do cx-set-position \"Contours\" '(x 201 y 172))(cx-gui-do cx-set-position \"Contours\" '(x 199 y 172))(cx-gui-do cx-set-position \"Contours\" '(x 196 y 170))(cx-gui-do cx-set-position \"Contours\" '(x 192 y 169))(cx-gui-do cx-set-position \"Contours\" '(x 190 y 169))(cx-gui-do cx-set-position \"Contours\" '(x 185 y 167))(cx-gui-do cx-set-position \"Contours\" '(x 182 y 167))(cx-gui-do cx-set-position \"Contours\" '(x 178 y 166))(cx-gui-do cx-set-position \"Contours\" '(x 175 y 164))(cx-gui-do cx-set-position \"Contours\" '(x 172 y 164))(cx-gui-do cx-set-position \"Contours\" '(x 170 y 164))(cx-gui-do cx-set-position \"Contours\" '(x 168 y 163))(cx-gui-do cx-set-position \"Contours\" '(x 165 y 162))(cx-gui-do cx-set-position \"Contours\" '(x 162 y 162))(cx-gui-do cx-set-position \"Contours\" '(x 160 y 160))(cx-gui-do cx-set-position \"Contours\" '(x 160 y 159))(cx-gui-do cx-set-position \"Contours\" '(x 158 y 159))(cx-gui-do cx-set-position \"Contours\" '(x 156 y 159))(cx-gui-do cx-set-position \"Contours\" '(x 154 y 158))(cx-gui-do cx-set-position \"Contours\" '(x 153 y 157))(cx-gui-do cx-set-position \"Contours\" '(x 152 y 157))(cx-gui-do cx-set-position \"Contours\" '(x 151 y 157))(cx-gui-do cx-set-position \"Contours\" '(x 151 y 156))(cx-gui-do cx-set-position \"Contours\" '(x 149 y 156))(cx-gui-do cx-set-position \"Contours\" '(x 148 y 156))(cx-gui-do cx-set-position \"Contours\" '(x 147 y 154))(cx-gui-do cx-set-position \"Contours\" '(x 146 y 154))")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Contours*Frame4*Frame3*List3(Surfaces)\" '( 2 4))(cx-gui-do cx-activate-item \"Contours*Frame4*Frame3*List3(Surfaces)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton3(Compute)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Contours*Frame4*Frame3*List3(Surfaces)\" '( 4))(cx-gui-do cx-activate-item \"Contours*Frame4*Frame3*List3(Surfaces)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton3(Compute)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command="""(cx-use-window-id 2)(cx-use-window-id 2)(cx-set-camera '(0.677462 0.0819105 11.142) '(0.677462 0.0819105 0) '(-2.98051e-008 1 0) 4.45681 4.45681 \"perspective\")
+(cx-gui-do cx-activate-item \"Contours*PanelButtons*PushButton1(OK)\")""")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Contours*Frame4*Frame3*List3(Surfaces)\" '( 2 4))(cx-gui-do cx-activate-item \"Contours*Frame4*Frame3*List3(Surfaces)\")")
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Contours*Frame4*Frame3*List3(Surfaces)\" '( 2))(cx-gui-do cx-activate-item \"Contours*Frame4*Frame3*List3(Surfaces)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton3(Compute)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command="(cx-use-window-id 2)(cx-set-camera '(0.391118 -0.25472 5.87583) '(0.391118 -0.25472 0) '(-9.1648e-008 1 0) 2.35033 2.35033 \"perspective\")")
+setup1.SendCommand(Command='(cx-gui-do cx-set-toggle-button "Contours*Frame2*Frame1(Options)*ToggleBox1(Options)*CheckButton1(Filled)" #t)(cx-gui-do cx-activate-item "Contours*Frame2*Frame1(Options)*ToggleBox1(Options)*CheckButton1(Filled)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-toggle-button "Contours*Frame2*Frame1(Options)*ToggleBox1(Options)*CheckButton1(Filled)" #f)(cx-gui-do cx-activate-item "Contours*Frame2*Frame1(Options)*ToggleBox1(Options)*CheckButton1(Filled)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton3(Compute)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-toggle-button "Contours*Frame2*Frame1(Options)*ToggleBox1(Options)*CheckButton1(Filled)" #t)(cx-gui-do cx-activate-item "Contours*Frame2*Frame1(Options)*ToggleBox1(Options)*CheckButton1(Filled)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-toggle-button "Contours*Frame2*Frame1(Options)*ToggleBox1(Options)*CheckButton1(Filled)" #f)(cx-gui-do cx-activate-item "Contours*Frame2*Frame1(Options)*ToggleBox1(Options)*CheckButton1(Filled)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Solution|Run Calculation"))')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Run Calculation*Frame1*Table1*PushButton21(Calculate)")(cx-gui-do cx-activate-item "Settings have changed!*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Information*OK")(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Results|Graphics"))')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Results|Graphics"))(cx-gui-do cx-activate-item "NavigationPane*List_Tree1")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Graphics and Animations*Frame1*Table1*Frame1*List1(Graphics)\" '( 1))(cx-gui-do cx-activate-item \"Graphics and Animations*Frame1*Table1*Frame1*List1(Graphics)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Graphics and Animations*Frame1*Table1*PushButton2(Set Up)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-toggle-button "Contours*Frame2*Frame1(Options)*ToggleBox1(Options)*CheckButton6(Draw Profiles)" #f)(cx-gui-do cx-activate-item "Contours*Frame2*Frame1(Options)*ToggleBox1(Options)*CheckButton6(Draw Profiles)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Profile Options*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-toggle-button "Contours*Frame2*Frame1(Options)*ToggleBox1(Options)*CheckButton6(Draw Profiles)" #t)(cx-gui-do cx-activate-item "Contours*Frame2*Frame1(Options)*ToggleBox1(Options)*CheckButton6(Draw Profiles)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton3(Compute)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Contours*Frame4*Frame3*List3(Surfaces)\" '())(cx-gui-do cx-activate-item \"Contours*Frame4*Frame3*List3(Surfaces)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton3(Compute)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command="(cx-use-window-id 2)(cx-set-camera '(0.217439 0.0363345 33.8388) '(0.217439 0.0363345 -1.13824e-005) '(-9.29576e-008 1 0) 13.5355 13.5355 \"perspective\")")
+setup1.SendCommand(Command='(cx-gui-do cx-set-integer-entry "Contours*Frame2*IntegerEntry3(Levels)" 21)(cx-gui-do cx-activate-item "Contours*Frame2*IntegerEntry3(Levels)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*Frame2*IntegerEntry3(Levels)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-integer-entry "Contours*Frame2*IntegerEntry3(Levels)" 22)(cx-gui-do cx-activate-item "Contours*Frame2*IntegerEntry3(Levels)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*Frame2*IntegerEntry3(Levels)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-integer-entry "Contours*Frame2*IntegerEntry3(Levels)" 23)(cx-gui-do cx-activate-item "Contours*Frame2*IntegerEntry3(Levels)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*Frame2*IntegerEntry3(Levels)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-integer-entry "Contours*Frame2*IntegerEntry3(Levels)" 24)(cx-gui-do cx-activate-item "Contours*Frame2*IntegerEntry3(Levels)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*Frame2*IntegerEntry3(Levels)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-integer-entry "Contours*Frame2*IntegerEntry3(Levels)" 25)(cx-gui-do cx-activate-item "Contours*Frame2*IntegerEntry3(Levels)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton3(Compute)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-integer-entry "Contours*Frame2*IntegerEntry3(Levels)" 50)(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command="""(cx-use-window-id 2)(cx-set-camera '(1.41523 -0.398444 17.7362) '(1.41523 -0.398444 -7.69333e-005) '(-1.14625e-007 1 1.86265e-009) 7.09452 7.09452 \"perspective\")
+(cx-use-window-id 2)(cx-set-camera '(2.03163 -0.455229 17.1098) '(2.03163 -0.455229 -4.52184e-005) '(-9.93568e-008 1 1.62981e-009) 6.84392 6.84392 \"perspective\")
+(cx-gui-do cx-activate-item \"Contours*PanelButtons*PushButton2(Cancel)\")""")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Results|Plots"))')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Plots*Frame1*Table1*Frame1*List1(Plots)\" '( 0))(cx-gui-do cx-activate-item \"Plots*Frame1*Table1*Frame1*List1(Plots)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Plots*Frame1*Table1*PushButton2(Set Up)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Solution XY Plot*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Results|Reports"))')
+setup1.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Reports*Frame1*Table1*Frame1*List1(Reports)\" '( 1))(cx-gui-do cx-activate-item \"Reports*Frame1*Table1*Frame1*List1(Reports)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Reports*Frame1*Table1*Frame2*Table2*PushButton1(Set Up)")')
+setup1.SendCommand(Command="(cx-gui-do cx-set-real-entry-list \"Force Reports*Frame1*Frame2*Frame1(Direction Vector)*RealEntry1(X)\" '( 0))(cx-gui-do cx-set-real-entry-list \"Force Reports*Frame1*Frame2*Frame1(Direction Vector)*RealEntry2(Y)\" '( 1))(cx-gui-do cx-activate-item \"Force Reports*PanelButtons*PushButton1(OK)\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Force Reports*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(%cx-warning-dialog "OK to close Fluent?" #f)(cx-gui-do cx-activate-item "Warning*OK")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*FileMenu*Close Fluent")')
+solution1 = system1.GetContainer(ComponentName="Solution")
+solution1.Edit()
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list ))(%cx-warning-dialog "OK to close Fluent?" #f)(cx-gui-do cx-activate-item "Warning*OK")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*FileMenu*Close Fluent")')
+results1 = system1.GetContainer(ComponentName="Results")
+results1.Edit()
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 1, 0, 0
+    Scale = 0.171125
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>show /DATA READER/CASE:Case dAirfoil/BOUNDARY:symmetry 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /DATA READER/CASE:Case dAirfoil/BOUNDARY:symmetry 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /DATA READER/CASE:Case dAirfoil/BOUNDARY:symmetry 2, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /DATA READER/CASE:Case dAirfoil/BOUNDARY:symmetry 2, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /DATA READER/CASE:Case dAirfoil/BOUNDARY:symmetry 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="> autolegend plot=/CONTOUR:velcontour, view=VIEW:View 1")
+results1.SendCommand(Command="""CONTOUR:velcontour
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = symmetry 2
+Max = 0.0 [m s^-1]
+Min = 0.0 [m s^-1]
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0 [m s^-1],1 [m s^-1]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:velcontour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""CONTOUR:velcontour
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = symmetry 1
+Max = 0.0 [m s^-1]
+Min = 0.0 [m s^-1]
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0 [m s^-1],1 [m s^-1]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 1, 0, 0
+    Scale = 2.15825
+    Pan = 0.622466, -0.0516196
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+CONTOUR:velcontour
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = symmetry 1
+Max = 0.0 [m s^-1]
+Min = 0.0 [m s^-1]
+Number of Contours = 25
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0 [m s^-1],1 [m s^-1]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 1, 0, 0
+    Scale = 1.56657
+    Pan = 0.622466, -0.0516196
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>hide /CONTOUR:velcontour, view=/VIEW:View 1""")
+results1.SendCommand(Command="> autolegend plot=/VECTOR:velvector, view=VIEW:View 1")
+results1.SendCommand(Command="""VECTOR:velvector
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Coord Frame = Global
+Culling Mode = No Culling
+Direction = X
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = symmetry 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 100
+Min = 0.0 [m s^-1]
+Normalized = Off
+Number of Samples = 100
+Projection Type = None
+Random Seed = 1
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Reduction
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Symbol = Line Arrow
+Symbol Size = 1.0
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /VECTOR:velvector, view=/VIEW:View 1""")
+results1.SendCommand(Command="""VECTOR:velvector
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Coord Frame = Global
+Culling Mode = No Culling
+Direction = X
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = symmetry 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 100
+Min = 0.0 [m s^-1]
+Normalized = Off
+Number of Samples = 100
+Projection Type = None
+Random Seed = 1
+Range = Global
+Reduction Factor = 1
+Reduction or Max Number = Reduction
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Symbol = Line Arrow
+Symbol Size = 1.0
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VECTOR:velvector
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Coord Frame = Global
+Culling Mode = No Culling
+Direction = X
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = symmetry 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 100
+Min = 0.0 [m s^-1]
+Normalized = Off
+Number of Samples = 100
+Projection Type = None
+Random Seed = 1
+Range = Global
+Reduction Factor = 1
+Reduction or Max Number = Reduction
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Symbol = Line Arrow
+Symbol Size = 1.0
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VECTOR:velvector
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Coord Frame = Global
+Culling Mode = No Culling
+Direction = X
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = symmetry 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 100
+Min = 0.0 [m s^-1]
+Normalized = Off
+Number of Samples = 100
+Projection Type = None
+Random Seed = 1
+Range = Global
+Reduction Factor = 2
+Reduction or Max Number = Reduction
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Symbol = Line Arrow
+Symbol Size = 1.0
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VECTOR:velvector
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Coord Frame = Global
+Culling Mode = No Culling
+Direction = X
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = symmetry 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 100
+Min = 0.0 [m s^-1]
+Normalized = Off
+Number of Samples = 100
+Projection Type = None
+Random Seed = 1
+Range = Global
+Reduction Factor = 10
+Reduction or Max Number = Reduction
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Symbol = Line Arrow
+Symbol Size = 1.0
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 1, 0, 0
+    Scale = 0.932717
+    Pan = 0.622466, -0.0516196
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+VECTOR:velvector
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Coord Frame = Global
+Culling Mode = No Culling
+Direction = X
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = symmetry 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 100
+Min = 0.0 [m s^-1]
+Normalized = Off
+Number of Samples = 100
+Projection Type = None
+Random Seed = 1
+Range = Global
+Reduction Factor = 1
+Reduction or Max Number = Reduction
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Symbol = Line Arrow
+Symbol Size = 1.0
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VECTOR:velvector
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Coord Frame = Global
+Culling Mode = No Culling
+Direction = X
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = symmetry 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 100
+Min = 0.0 [m s^-1]
+Normalized = Off
+Number of Samples = 100
+Projection Type = None
+Random Seed = 1
+Range = Global
+Reduction Factor = 1
+Reduction or Max Number = Reduction
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Symbol = Line Arrow
+Symbol Size = 1.0
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = On
+  Apply Translation = Off
+  Scale Vector = 0.5 , 0.5 , 0.5 
+  END
+END""")
+results1.SendCommand(Command="""VECTOR:velvector
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Coord Frame = Global
+Culling Mode = No Culling
+Direction = X
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = symmetry 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 100
+Min = 0.0 [m s^-1]
+Normalized = Off
+Number of Samples = 100
+Projection Type = None
+Random Seed = 1
+Range = Global
+Reduction Factor = 1
+Reduction or Max Number = Reduction
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Symbol = Line Arrow
+Symbol Size = 1.0
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = On
+  Apply Translation = Off
+  Scale Vector = 0.1 , 0.1 , 0.1 
+  END
+END""")
+results1.SendCommand(Command="""VECTOR:velvector
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Coord Frame = Global
+Culling Mode = No Culling
+Direction = X
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = symmetry 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 100
+Min = 0.0 [m s^-1]
+Normalized = Off
+Number of Samples = 100
+Projection Type = None
+Random Seed = 1
+Range = Global
+Reduction Factor = 1
+Reduction or Max Number = Reduction
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Symbol = Line Arrow
+Symbol Size = 0.1
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 0.1 , 0.1 , 0.1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 1, 0, 0
+    Scale = 4.92102
+    Pan = 0.622466, -0.0516196
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+VECTOR:velvector
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Coord Frame = Global
+Culling Mode = No Culling
+Direction = X
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = symmetry 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 100
+Min = 0.0 [m s^-1]
+Normalized = Off
+Number of Samples = 100
+Projection Type = None
+Random Seed = 1
+Range = Global
+Reduction Factor = 1
+Reduction or Max Number = Reduction
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Symbol = Line Arrow
+Symbol Size = 0.05
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 0.1 , 0.1 , 0.1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 1, 0, 0
+    Scale = 3.66767
+    Pan = 1.00376, -0.0595905
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+VECTOR:velvector
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Coord Frame = Global
+Culling Mode = No Culling
+Direction = X
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = symmetry 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 100
+Min = 0.0 [m s^-1]
+Normalized = Off
+Number of Samples = 100
+Projection Type = None
+Random Seed = 1
+Range = Global
+Reduction Factor = 1
+Reduction or Max Number = Reduction
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Symbol = Line Arrow
+Symbol Size = 0.02
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 0.1 , 0.1 , 0.1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 1, 0, 0
+    Scale = 0.876829
+    Pan = 0.984371, 0.00810438
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>hide /VECTOR:velvector, view=/VIEW:View 1""")
+results1.SendCommand(Command="> autolegend plot=/STREAMLINE:Streamline 1, view=VIEW:View 1")
+results1.SendCommand(Command="""STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = inlet
+Locator Sampling Method = Equally Spaced
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 25
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /STREAMLINE:Streamline 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 1, 0, 0
+    Scale = 0.103657
+    Pan = 0.984371, 0.00810438
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = inlet
+Locator Sampling Method = Equally Spaced
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 25
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = Surface Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = inlet
+Locator Sampling Method = Equally Spaced
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 25
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""INTERNAL POINT CLOUD:Streamline Seed Preview
+  Domain List = /DOMAIN GROUP:All Domains
+  Location List = inlet
+  Locator Sampling Method = Equally Spaced
+  Number of Samples = 25
+  Sample Spacing = 0.1
+  Sampling Aspect Ratio = 1
+  Reduction or Max Number = Max Number
+  Reduction Factor = 1.0
+  Maximum Number of Items = 25
+  Sampling Grid Angle = 0 [degree]
+  Colour Mode = Constant
+  Colour = 0, 1, 0
+  Point Symbol = Point2D
+  Symbol Size = 4
+  Symbol Size Mode = Absolute
+  Visibility = On
+  Draw Faces = On
+END
+>show /INTERNAL POINT CLOUD:Streamline Seed Preview""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.366781, -0.00810447, 0.00824788
+    Scale = 0.103657
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = airfoil
+Locator Sampling Method = Equally Spaced
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 25
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = solid surface_body
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = airfoil
+Locator Sampling Method = Equally Spaced
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 25
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = solid surface_body
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = inlet
+Locator Sampling Method = Rectangular Grid
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 25
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = solid surface_body
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = inlet
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 100
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.366781, -0.00810447, 0.00824788
+    Scale = 0.0715719
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = solid surface_body
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = inlet
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 200
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""INTERNAL POINT CLOUD:Streamline Seed Preview
+  Domain List = solid surface_body
+  Location List = inlet
+  Locator Sampling Method = Equally Spaced
+  Number of Samples = 25
+  Sample Spacing = 0.1
+  Sampling Aspect Ratio = 1
+  Reduction or Max Number = Max Number
+  Reduction Factor = 1.0
+  Maximum Number of Items = 200
+  Sampling Grid Angle = 0 [degree]
+  Colour Mode = Constant
+  Colour = 0, 1, 0
+  Point Symbol = Point2D
+  Symbol Size = 4
+  Symbol Size Mode = Absolute
+  Visibility = On
+  Draw Faces = On
+END
+>show /INTERNAL POINT CLOUD:Streamline Seed Preview""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /STREAMLINE:Streamline 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="> autolegend plot=/PLANE:Plane 1, view=VIEW:View 1")
+results1.SendCommand(Command="""PLANE:Plane 1
+Apply Instancing Transform = On
+Apply Texture = Off
+Blend Texture = On
+Bound Radius = 0.5 [m]
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Culling Mode = No Culling
+Direction 1 Bound = 5 [m]
+Direction 1 Orientation = 0 [degree]
+Direction 1 Points = 10
+Direction 2 Bound = 5 [m]
+Direction 2 Points = 10
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Invert Plane Bound = Off
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Max = 0.0
+Min = 0.0
+Normal = 1 , 0 , 0 
+Option = XY Plane
+Plane Bound = Rectangular
+Plane Type = Slice
+Point = 0 [m], 0 [m], 0 [m]
+Point 1 = 0 [m], 0 [m], 0 [m]
+Point 2 = 1 [m], 0 [m], 0 [m]
+Point 3 = 0 [m], 1 [m], 0 [m]
+Range = Global
+Render Edge Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Texture Angle = 0
+Texture Direction = 0 , 1 , 0 
+Texture File =  
+Texture Material = Metal
+Texture Position = 0 , 0 
+Texture Scale = 1
+Texture Type = Predefined
+Tile Texture = Off
+Transform Texture = Off
+Transparency = 0.0
+X = 0.0 [m]
+Y = 0.0 [m]
+Z = 0.0 [m]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /PLANE:Plane 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /PLANE:Plane 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /PLANE:Plane 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""PLANE:Plane 1
+Apply Instancing Transform = On
+Apply Texture = Off
+Bound Radius = 0.5 [m]
+Colour = 0.0, 1.0, 0.0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Culling Mode = No Culling
+Direction 1 Bound = 5 [m]
+Direction 1 Orientation = 0 [degree]
+Direction 1 Points = 10
+Direction 2 Bound = 5 [m]
+Direction 2 Points = 10
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Invert Plane Bound = Off
+Lighting = On
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Normal = 1 , 0 , 0 
+Option = XY Plane
+Plane Bound = Rectangular
+Plane Type = Slice
+Point = 0 [m], 0 [m], 0 [m]
+Point 1 = 0 [m], 0 [m], 0 [m]
+Point 2 = 1 [m], 0 [m], 0 [m]
+Point 3 = 0 [m], 1 [m], 0 [m]
+Range = Global
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Transparency = 0.0
+X = 0.0 [m]
+Y = 0.0 [m]
+Z = 0.0 [m]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.366781, -0.00810447, 0.00824788
+    Scale = 0.0573438
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+PLANE:Plane 1
+Apply Instancing Transform = On
+Apply Texture = Off
+Blend Texture = On
+Bound Radius = 5 [m]
+Colour = 0.6, 0.6, 0.6
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Culling Mode = No Culling
+Direction 1 Bound = 5 [m]
+Direction 1 Orientation = 0 [degree]
+Direction 1 Points = 10
+Direction 2 Bound = 5 [m]
+Direction 2 Points = 10
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Invert Plane Bound = Off
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Normal = 1 , 0 , 0 
+Option = XY Plane
+Plane Bound = Circular
+Plane Type = Slice
+Point = 0 [m], 0 [m], 0 [m]
+Point 1 = 0 [m], 0 [m], 0 [m]
+Point 2 = 1 [m], 0 [m], 0 [m]
+Point 3 = 0 [m], 1 [m], 0 [m]
+Range = Global
+Render Edge Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Texture Angle = 0
+Texture Direction = 0 , 1 , 0 
+Texture File =  
+Texture Material = Metal
+Texture Position = 0 , 0 
+Texture Scale = 1
+Texture Type = Predefined
+Tile Texture = Off
+Transform Texture = Off
+Transparency = 0.0
+X = 0.0 [m]
+Y = 0.0 [m]
+Z = 0.0 [m]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /STREAMLINE:Streamline 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="> autolegend plot=/STREAMLINE:Streamline 1, view=VIEW:View 1")
+results1.SendCommand(Command="""STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = solid surface_body
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = /PLANE:Plane 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 200
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="> delete /PLANE:Plane 1")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /STREAMLINE:Streamline 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="> delete /PLANE:Plane 1")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /PLANE:Plane 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="> delete /STREAMLINE:Streamline 1")
+results1.SendCommand(Command="> delete /PLANE:Plane 1")
+results1.SendCommand(Command="> autolegend plot=/LINE:Line 1, view=VIEW:View 1")
+results1.SendCommand(Command="""LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 50
+Line Type = Sample
+Line Width = 2
+Max = 0.0
+Min = 0.0
+Option = Two Points
+Point 1 = -5 [m], 5 [m], 0 [m]
+Point 2 = -5 [m], -5 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /LINE:Line 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="> autolegend plot=/STREAMLINE:Streamline 1, view=VIEW:View 1")
+results1.SendCommand(Command="""INTERNAL POINT CLOUD:Streamline Seed Preview
+  Domain List = /DOMAIN GROUP:All Domains
+  Location List = /LINE:Line 1
+  Locator Sampling Method = Vertex
+  Number of Samples = 25
+  Sample Spacing = 0.1
+  Sampling Aspect Ratio = 1
+  Reduction or Max Number = Max Number
+  Reduction Factor = 1.0
+  Maximum Number of Items = 25
+  Sampling Grid Angle = 0 [degree]
+  Colour Mode = Constant
+  Colour = 0, 1, 0
+  Point Symbol = Point2D
+  Symbol Size = 4
+  Symbol Size Mode = Absolute
+  Visibility = On
+  Draw Faces = On
+END
+>show /INTERNAL POINT CLOUD:Streamline Seed Preview""")
+results1.SendCommand(Command="""STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = /LINE:Line 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 25
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /STREAMLINE:Streamline 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="> autolegend plot=/LINE:Line 1, view=VIEW:View 1")
+results1.SendCommand(Command="""LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 50
+Line Type = Sample
+Line Width = 12
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = -5 [m], 5 [m], 0 [m]
+Point 2 = -5 [m], -5 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -7.88286, 5.93673, 0.00829393
+    Scale = 0.111233
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+>centerview 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /DEFAULT LEGEND:Default Legend View 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /DEFAULT LEGEND:Default Legend View 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /WIREFRAME:Wireframe, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /WIREFRAME:Wireframe, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /LINE:Line 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /LINE:Line 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /STREAMLINE:Streamline 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /STREAMLINE:Streamline 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /DATA READER/CASE:Case dAirfoil/BOUNDARY:symmetry 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 1, 0, 0
+    Scale = 0.174986
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+> autolegend plot=/LINE:Line 1, view=VIEW:View 1""")
+results1.SendCommand(Command="""LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 50
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = -5 [m], 5 [m], 0 [m]
+Point 2 = -5 [m], -5 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 50
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = -5 [m], 2 [m], 0 [m]
+Point 2 = -5 [m], -2 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 1, 0, 0
+    Scale = 0.711957
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+> autolegend plot=/STREAMLINE:Streamline 1, view=VIEW:View 1""")
+results1.SendCommand(Command="""STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = /LINE:Line 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 50
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="> autolegend plot=/LINE:Line 1, view=VIEW:View 1")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 1, 0, 0
+    Scale = 0.952548
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 50
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = -5 [m], 1 [m], 0 [m]
+Point 2 = -5 [m], -1 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 1, 0, 0
+    Scale = 0.542998
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 50
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = -5 [m], 0.5 [m], 0 [m]
+Point 2 = -5 [m], -1 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 50
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = -5 [m], 0.2 [m], 0 [m]
+Point 2 = -5 [m], -1 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 1, 0, 0
+    Scale = 0.676134
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+> autolegend plot=/PARTICLE TRACK:Particle Track 1, view=VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /STREAMLINE:Streamline 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /STREAMLINE:Streamline 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""PARTICLE TRACK:Particle Track 1
+Activate Filter = Off
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Symbols = Off
+Draw Tracks = On
+Font = Sans Serif
+Input File =  
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Limit Track Option = Up To Current Timestep
+Line Width = 1
+Max = 0.0
+Maximum Number of Tracks = 25
+Min = 0.0
+Number of Sides = 8
+Option = From File
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Tracks = Max Tracks
+Show Track Labels = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Symbol Max Time Selection = User Specified
+Symbol Scale Type = Relative
+Symbol Size = 1.0
+Symbol Size Option = Constant
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Track Drawing Mode = Line
+Track End Distance = 0.0 [m]
+Track End Time = 0.0 [s]
+Track File Type = CFX4
+Track Limit Type = Time
+Track Line Width = 2
+Track Size = 1.0
+Track Start Distance = 0.0 [m]
+Track Start Time = 0.0 [s]
+Track Symbol = Ball
+Transparency = 0.0
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /PARTICLE TRACK:Particle Track 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="> autolegend plot=/CONTOUR:Contour 1, view=VIEW:View 1")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:velcontour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = airfoil
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.469
+Use Face Values = Off
+Value List = 0 [Pa],1 [Pa]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:Contour 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = airfoil
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.9
+Use Face Values = Off
+Value List = 0 [Pa],1 [Pa]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = airfoil
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.9
+Use Face Values = Off
+Value List = 0 [Pa],1 [Pa]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 1, 0, 0
+    Scale = 0.423445
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+> autolegend plot=/STREAMLINE:Streamline 1, view=VIEW:View 1""")
+results1.SendCommand(Command="""STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0, 0, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = /LINE:Line 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 50
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:Contour 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="> delete /CONTOUR:Contour 1")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:velcontour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:velcontour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0, 0, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Location List = /LINE:Line 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 50
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.5
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.00430533, -0.19148, 0.00507951
+    Scale = 0.423445
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0, 0, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = Off
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Location List = /LINE:Line 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 50
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""STREAMLINE:Streamline 1
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0, 0, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Location List = /LINE:Line 1
+Locator Sampling Method = Vertex
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 50
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="> autolegend plot=/CONTOUR:velcontour, view=VIEW:View 1")
+results1.SendCommand(Command="""CONTOUR:velcontour
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = symmetry 1
+Max = 0.0 [m s^-1]
+Min = 0.0 [m s^-1]
+Number of Contours = 25
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.495
+Use Face Values = Off
+Value List = 0 [m s^-1],1 [m s^-1]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""CONTOUR:velcontour
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = symmetry 1
+Max = 0.0 [m s^-1]
+Min = 0.0 [m s^-1]
+Number of Contours = 25
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.5
+Use Face Values = Off
+Value List = 0 [m s^-1],1 [m s^-1]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""CONTOUR:velcontour
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = symmetry 1
+Max = 0.0 [m s^-1]
+Min = 0.0 [m s^-1]
+Number of Contours = 25
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.2
+Use Face Values = Off
+Value List = 0 [m s^-1],1 [m s^-1]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.00430533, -0.19148, 0.00507951
+    Scale = 0.575291
+    Pan = -0.440547, -0.310106
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+> autolegend plot=/CONTOUR:velcontour, view=VIEW:View 1""")
+results1.SendCommand(Command="""CONTOUR:velcontour
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = symmetry 1
+Max = 0.0 [m s^-1]
+Min = 0.0 [m s^-1]
+Number of Contours = 25
+Show Numbers = On
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.2
+Use Face Values = Off
+Value List = 0 [m s^-1],1 [m s^-1]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.00430533, -0.19148, 0.00507951
+    Scale = 2.32819
+    Pan = -0.440547, -0.310106
+    Rotation Quaternion = 0, 0, 1.86265e-008, 1
+    
+  END
+
+END
+
+> update
+CONTOUR:velcontour
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = symmetry 1
+Max = 0.0 [m s^-1]
+Min = 0.0 [m s^-1]
+Number of Contours = 25
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Transparency = 0.2
+Use Face Values = Off
+Value List = 0 [m s^-1],1 [m s^-1]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+Save(Overwrite=True)
